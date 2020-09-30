@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Push to remote repo
-      - name: checkout branch
-      - uses: actions/checkout@v2
+      # Update file contents
+      - uses: actions/checkout@v1
       - name: Run a one-line script
         run: ./.github/workflows/bumpversion.sh
       - name: check for changes
