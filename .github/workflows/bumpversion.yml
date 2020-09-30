@@ -16,7 +16,7 @@ jobs:
       # Update file contents
       - uses: actions/checkout@v1
       - name: Run a one-line script
-        run: ./.github/workflows/bumpversion.sh
+        run: sudo ./.github/workflows/bumpversion.sh
       - name: check for changes
         run: git status
       - name: stage changed files
