@@ -15,10 +15,12 @@ jobs:
     steps:
       # Update file contents
       - uses: actions/checkout@v1
-      - name: Run a one-line script
+      - name: Run bash script
         run: bash ./.github/workflows/bumpversion.sh
-      - name: switching from HTTPS to SSH
-        run: git remote set-url origin ${{ secrets.SSH }}
+      - name: set git email
+        run: git config user.email ${{secrets.EMAIL}}
+      - name: set git username
+        run: git config user.name ${{secrets.USERNAME}}
       - name: check for changes
         run: git status
       - name: stage changed files
